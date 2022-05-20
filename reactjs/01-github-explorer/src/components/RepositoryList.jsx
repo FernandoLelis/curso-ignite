@@ -3,7 +3,6 @@ import { RepositoryItem } from "./RepositoryItem";
 
 import '../styles/repositories.scss';
 
-
 export function RespositoryList() {
     const [repositories, setRepositories] = useState([]);
 

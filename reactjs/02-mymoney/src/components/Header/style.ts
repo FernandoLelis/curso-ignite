@@ -13,6 +13,10 @@ export const Content = styled.div`
     align-items: center;
     justify-content: space-between;
 
+    img {
+        max-height: 2.5rem;
+    }
+
     button {
         font-size: 1rem;
         color: #fff;

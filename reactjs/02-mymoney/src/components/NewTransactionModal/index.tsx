@@ -1,11 +1,15 @@
 import { FormEvent, useState, useContext } from 'react';
 import Modal from 'react-modal';
+import { TransactionsContext } from '../../TransactionsContext';
+import { api } from '../../services/api';
+
 import incomeImg from '../../assets/income.svg';
 import outcomeImg from '../../assets/outcome.svg';
 import closeImg from '../../assets/close.svg';
-import { api } from '../../services/api';
+
 
 import { Container, TransactionTypeContainer, RadioBox } from './style';
+
 
 
 

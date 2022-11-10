@@ -16,6 +16,8 @@ import {
     TaskInput 
 } from "./styles";
 import { number, string } from "zod";
+import { NewCycleForm } from "./components/NewCycleForm";
+import { Countdown } from "./components/Countdown";
 
     
 const newCycleFormValidationSchema = zod.object({
@@ -141,45 +143,10 @@ export function Home() {
     return (
         <HomeContainer>
         <form onSubmit={handleSubmit(handleCreateNewCycle)} action="">
-            <FormContainer>
-                <label htmlFor="task">Vou trabalhar em</label>
-                <TaskInput 
-                    placeholder="Dê um nome para o seu projeto" 
-                    id="task"
-                    list="task-suggestions"
-                    disabled={!!activeCycle}
-                    {...register('task')}
-                />
+           <NewCycleForm />
+           <Countdown />
 
-                <datalist id="task-suggestions">
-                    <option value="Projeto 01" />
-                    <option value="Projeto 02" />
-                    <option value="Projeto 03" />
-                    <option value="Casa" />
-                </datalist>
-
-                <label htmlFor="minutesAmount">Durante</label>
-                <MinutesAmountInput 
-                    type="number" 
-                    id="minutesAmount" 
-                    placeholder="00" 
-                    step={5}
-                    min={1}
-                    max={60}
-                    disabled={!!activeCycle}
-                    {...register('minutesAmount', {valueAsNumber: true})}
-                /> 
-
-                <span>minutos.</span>
-            </FormContainer>
-
-            <CountdownContainer>
-                <span>{minutes[0]}</span>
-                <span>{minutes[1]}</span>
-                <Separetor>:</Separetor>
-                <span>{seconds[0]}</span>
-                <span>{seconds[1]}</span>
-            </CountdownContainer>
+            
 
             { activeCycle ? (
                 <StopCountdownButton onClick={handleInterruptCycle} type="button">

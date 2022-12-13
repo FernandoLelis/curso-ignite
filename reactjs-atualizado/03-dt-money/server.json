@@ -47,6 +47,14 @@
       "type": "outcome",
       "createdAt": "2022-12-13T18:32:27.101Z",
       "id": 6
+    },
+    {
+      "description": "Banana",
+      "price": 10,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "2022-12-13T19:00:22.026Z",
+      "id": 7
     }
   ]
 }

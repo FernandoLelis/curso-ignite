@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { HeaderContainer } from "./styles";
-import { Card } from "../Cart";
+import { Cart } from "../Cart";
 
 import logoImg from '../../assets/logo.svg';
 
@@ -12,7 +12,7 @@ export function Header() {
             <img src={logoImg.src} alt="" />
             </Link>
 
-            <Card />
+            <Cart />
         </HeaderContainer>
     )
 }

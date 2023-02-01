@@ -8,6 +8,18 @@ export const CartButtonContainer = styled('button', {
     borderRadius: 6,
     position: 'relative',
 
+    '&:disabled': {
+        apacity: 0.6,
+        cursor: 'not-allowed',
+    },
+
     background: '$gray800',
-    color: '$gray300',
+    color: '$gray500',
+
+    width: '3rem',
+    height: '3rem',
+
+    svg: {
+        fontSize: 24,
+    }
 })

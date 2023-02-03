@@ -25,7 +25,7 @@ export default function Home({ products }: HomeProps) {
     dragFree: true,
   })
 
-  const { addToCart } = useCart();
+  const { addToCart, checkIfItemAlreadyExists } = useCart();
 
   function handleAddToCart(e: MouseEvent<HTMLButtonElement>, product: IProduct) {
     e.preventDefault();
@@ -53,7 +53,12 @@ export default function Home({ products }: HomeProps) {
                           <strong>{product.name}</strong>
                           <span>{product.price}</span> 
                         </div>
-                        <CartButton color="green" size="large" onClick={(e) => handleAddToCart(e, product)} />         
+                        <CartButton 
+                          color="green" 
+                          size="large" 
+                          disabled={checkIfItemAlreadyExists(product.id)}
+                          onClick={(e) => handleAddToCart(e, product)} 
+                        />         
                       </footer>
                     </Product>
                   </Link>

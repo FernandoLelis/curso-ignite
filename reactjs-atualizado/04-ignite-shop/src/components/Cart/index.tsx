@@ -6,8 +6,13 @@ import { CartButton } from "../CartButton";
 import { CartClose, CartContent, CartFinalization, CartProduct, CartProductDetails, CartProductImage, FinalizationDetails } from './styles';
 
 export function Cart() {
-    const { cartItems } = useCart();
+    const { cartItems, removeCartItem, cartTotal } = useCart();
     const cartQuantity = cartItems.length;
+
+    const formattedCartTotal = new Intl.NumberFormat('pt-BR', {
+       style: 'currency',
+       currency: 'BRL', 
+    }).format(cartTotal);
 
     return (
         <Diolog.Root>
@@ -40,7 +45,7 @@ export function Cart() {
                                 <CartProductDetails>
                                     <p>{cartItems.name}</p>
                                     <strong>{cartItems.price}</strong>
-                                    <button onClick={() => console.log('remove')
+                                    <button onClick={() => removeCartItem(cartItems.id)
                                     }>Revover</button>
                                 </CartProductDetails>
                             </CartProduct>
@@ -51,11 +56,11 @@ export function Cart() {
                         <FinalizationDetails>
                             <div>
                                 <span>Quantidade</span>
-                                <p>{cartQuantity} {cartQuantity > 1 ? "itens" : "item"}</p>
+                                <p>{cartQuantity} {cartQuantity === 1 ? "item" : "itens"}</p>
                             </div>
                             <div>
                                 <span>Valor total</span>
-                                <p>R$100,00</p>
+                                <p>{formattedCartTotal}</p>
                             </div>
                         </FinalizationDetails>
 

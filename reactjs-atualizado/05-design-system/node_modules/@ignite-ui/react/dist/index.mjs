@@ -128,7 +128,7 @@ var Box = styled("div", {
 
 // src/components/Text.tsx
 var Text = styled("p", {
-  fontFamile: "$default",
+  fontFamily: "$default",
   lineHeight: "$base",
   margin: 0,
   color: "$gray100",

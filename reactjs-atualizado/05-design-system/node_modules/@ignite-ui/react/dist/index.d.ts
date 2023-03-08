@@ -1,6 +1,6 @@
 import * as _stitches_react_types_styled_component from '@stitches/react/types/styled-component';
 import * as _stitches_react_types_css_util from '@stitches/react/types/css-util';
-import { ComponentProps } from 'react';
+import { ComponentProps, ElementType } from 'react';
 
 declare const Box: _stitches_react_types_styled_component.StyledComponent<"div", {}, {}, _stitches_react_types_css_util.CSS<{}, {
     colors: {
@@ -205,6 +205,7 @@ declare const Box: _stitches_react_types_styled_component.StyledComponent<"div",
     zIndex: "zIndices";
 }, {}>>;
 interface BoxProps extends ComponentProps<typeof Box> {
+    as?: ElementType;
 }
 
 declare const Text: _stitches_react_types_styled_component.StyledComponent<"p", {
@@ -412,6 +413,7 @@ declare const Text: _stitches_react_types_styled_component.StyledComponent<"p", 
     zIndex: "zIndices";
 }, {}>>;
 interface TextProps extends ComponentProps<typeof Text> {
+    as?: ElementType;
 }
 
 export { Box, BoxProps, Text, TextProps };

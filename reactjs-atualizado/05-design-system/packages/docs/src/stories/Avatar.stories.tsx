@@ -9,6 +9,13 @@ export default {
         src: 'https://github.com/FernandoLelis.png',
         alt: 'Fernando Lélis',
     },
+    argTypes: {
+        src: {
+            control: {
+                type: 'text',
+            },
+        },
+    },
 } as Meta<AvatarProps>
 
 export const Primary: StoryObj<AvatarProps> = {}
